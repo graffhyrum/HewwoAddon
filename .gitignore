@@ -4,3 +4,4 @@ libs/
 Thumbs.db
 
 .cursor/
+.vscode/
