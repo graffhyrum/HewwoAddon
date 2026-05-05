@@ -3,7 +3,7 @@
 ## Notes: Babby Dev's First Addon
 ## Author: graffhyrum
 ## Version: 0.1.0
-## RequiredDeps:
+## OptionalDeps: Ace3, LibDBIcon-1.0
 ## X-Curse-Project-ID: 999999
 ## SavedVariables:
 ## SavedVariablesPerCharacter: MyAddonDB
