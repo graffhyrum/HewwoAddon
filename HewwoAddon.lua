@@ -102,8 +102,8 @@ local function eventHandler(self, event, ...)
     end
 
     if mainFrame:IsShown() then
-        mainFrame.totalPlayerKills:SetText("Total Kills: " .. (MyAddonDB.kills or "0"))
-        mainFrame.totalCurrency:SetText("Gold: " .. (MyAddonDB.gold or "0") .. " Silver: " .. (MyAddonDB.silver or "0") .. " Copper: " .. (MyAddonDB.copper or "0"))
+        mainFrame.totalSuccessfulCasts:SetText("Total Casts: " .. (MyAddonDB.successfulCasts or 0))
+        mainFrame.totalCurrency:SetText("Gold: " .. (MyAddonDB.gold or 0) .. " Silver: " .. (MyAddonDB.silver or 0) .. " Copper: " .. (MyAddonDB.copper or 0))
     end
 end
 
