@@ -25,10 +25,28 @@ Create `libs/` inside the add-on folder and install:
 
 Typical sources: [WoWAce](https://www.wowace.com/) / CurseForge packages for **Ace3** and **LibDBIcon-1.0**. Lay out folders so paths match [`HewwoAddon.toc`](HewwoAddon.toc).
 
+## Development / quick setup (Windows)
+
+Scripted setup is **Windows-only** (retail WoW).
+
+**Layout:** Install add-ons under `<wow-install-folder>\_retail_\Interface\AddOns\` as **sibling folders** — for example `HewwoAddon\`, `Ace3\`, and `LibDBIcon-1.0\` next to each other.
+
+**Optional dev tools:** [just](https://github.com/casey/just) (runs the recipes in this repo’s `justfile`) and **Git** (for `just update`). Symlink creation needs **Developer Mode** or an elevated PowerShell session; see [Enable developer mode on Windows](https://learn.microsoft.com/en-us/windows/apps/get-started/enable-developer-mode).
+
+From a shell in the `HewwoAddon` folder:
+
+| Command | What it does |
+|---------|----------------|
+| `just setup` | Creates `libs\` and **directory symlinks** with **relative targets** `..\..\Ace3` and `..\..\LibDBIcon-1.0` (resolved from `HewwoAddon\libs\` up to `AddOns\`, then into each library). Implementation: [`scripts/hewwo-libs.ps1`](scripts/hewwo-libs.ps1). |
+| `just update` | `git pull --ff-only`, then `just setup`. |
+| `just check` | Verifies `libs\Ace3\AceAddon-3.0\AceAddon-3.0.lua` and `libs\LibDBIcon-1.0\embeds.xml` exist. |
+
+**Without `just`:** Create the same symlinks manually (or copy trees into `libs\` if you accept duplication). The relative link layout matches `just setup`.
+
 ## Install
 
-1. Populate `libs/` as above (or symlink a shared libs directory if your tooling supports it).
-2. Copy the `HewwoAddon` folder to `_retail_\Interface\AddOns\`.
+1. Install **Ace3** and **LibDBIcon-1.0** under `_retail_\Interface\AddOns\` (see table above), then populate `HewwoAddon\libs\` via `just setup` or equivalent symlinks.
+2. Ensure the `HewwoAddon` folder lives under `_retail_\Interface\AddOns\`.
 3. Enable **Hewwo Addon** on the character select **AddOns** list.
 
 ## Blizzard policy & disclaimer
