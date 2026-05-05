@@ -1,0 +1,6 @@
+libs/
+
+.DS_Store
+Thumbs.db
+
+.cursor/

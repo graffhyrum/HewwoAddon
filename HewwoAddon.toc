@@ -1,0 +1,18 @@
+## Interface: 120005
+## Title: Hewwo Addon
+## Notes: Babby Dev's First Addon
+## Author: graffhyrum
+## Version: 0.1.0
+## RequiredDeps:
+## X-Curse-Project-ID: 999999
+## SavedVariables:
+## SavedVariablesPerCharacter: MyAddonDB
+
+# Libraries
+libs/Ace3/AceAddon-3.0/AceAddon-3.0.lua
+libs/Ace3/AceDB-3.0/AceDB-3.0.lua
+libs/LibDBIcon-1.0/embeds.xml
+
+# Main Files
+HewwoAddon.lua
+Settings.lua
