@@ -10,7 +10,7 @@ World of Warcraft **retail** UI add-on: movable summary frame, toggles for cast 
 
 ## Requirements
 
-- Retail client matching `## Interface: 120005` in [`HewwoAddon.toc`](HewwoAddon.toc) (bump `.toc` when Blizzard updates the addon API slot).
+- Retail client matching `## Interface: 120105` in [`HewwoAddon.toc`](HewwoAddon.toc) (bump `.toc` when Blizzard updates the addon API slot).
 - Local **`libs/`** tree (see below). This repository **does not** ship `libs/`; those libraries have their **own licenses** when you vendor them.
 
 ## Libraries (`libs/`)

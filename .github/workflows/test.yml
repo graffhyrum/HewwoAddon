@@ -1,0 +1,25 @@
+name: Test
+
+on:
+  push:
+    branches: [master, main]
+  pull_request:
+    branches: [master, main]
+
+permissions:
+  contents: read
+
+# HewwoAddon has no Mechanic suite, Bun scripts, or .luacheckrc. This is a
+# lightweight TOC check only — not a port of the NMWQ/PTS Mechanic workflow.
+jobs:
+  toc:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - name: Check TOC Interface is a 6-digit number
+        run: |
+          interface=$(sed -n 's/^## Interface:[[:space:]]*//p' HewwoAddon.toc | tr -d '\r')
+          echo "Interface=$interface"
+          echo "$interface" | grep -Eq '^[0-9]{6}$'
